@@ -20,13 +20,16 @@ Layout = null;
             chat.client.sendMessage = function (name, message) {
                 $messages.append('<li><strong>' + name + '</strong>: ' + message + '</li>');
             };
+            chat.client.sendRepost = function (data) {
+                alert(data);
+            };
             $.connection.hub.start().done(function () {
                 alert("connection start");
                 $('#btnSendMessage').click(function () {
 
                     chat.server.send($username.val(), $message.val());
-
                     $message.val('').focus();
+                    chat.server.report("Hi");
                 });
             });
         });

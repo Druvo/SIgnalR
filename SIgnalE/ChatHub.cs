@@ -12,5 +12,9 @@ namespace SIgnalE
         {
             Clients.All.sendMessage(username, message);
         }
+        public void Report(string data)
+        {
+            Clients.All.sendRepost(data);
+        }
     }
 }
