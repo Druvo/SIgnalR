@@ -24,12 +24,10 @@ Layout = null;
                 alert(data);
             };
             $.connection.hub.start().done(function () {
-                alert("connection start");
+                console.log("connection start");
                 $('#btnSendMessage').click(function () {
-
                     chat.server.send($username.val(), $message.val());
                     $message.val('').focus();
-                    chat.server.report("Hi");
                 });
             });
         });
